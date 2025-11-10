@@ -1,4 +1,4 @@
-#ifdef FICHA_HPP
+#ifndef FICHA_HPP
 #define FICHA_HPP
 
 #include <string>
@@ -22,3 +22,10 @@ bool coronoDama() const;
 int jugador() const;
 std::string color() const;
 char simbolo() const;
+
+void posicion(int nuevafila, int nuevacolumna);
+void color(std::string nuevocolor);
+void coronar();
+void mostrar();
+};
+#endif
