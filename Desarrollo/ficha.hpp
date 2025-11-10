@@ -4,6 +4,7 @@
 #include <string>
 
 class ficha {
+protected:
 int fila; 
 int columna; 
 bool coronoDama; 
@@ -11,20 +12,21 @@ int jugador;
 std::string color; 
 char simbolo;
 
-ficha(int fila=0, int columna=0, int jugador=0, char simbolo= "o", std::string color="\033[37m");
+public:
+ficha(int f=0, int c=0, int j=0, char s= "o", std::string cor="\033[37m");
 
 virtual bool mover (int nuevafila, int nuevacolumna)=0
 virtual bool hayCaptura ()=0
 
-int fila() const;
-int columna() const;
-bool coronoDama() const;
-int jugador() const;
-std::string color() const;
-char simbolo() const;
+int getfila() const;
+int getcolumna() const;
+bool getcoronoDama() const;
+int getjugador() const;
+std::string getcolor() const;
+char getsimbolo() const;
 
-void posicion(int nuevafila, int nuevacolumna);
-void color(std::string nuevocolor);
+void setposicion(int nuevafila, int nuevacolumna);
+void setcolor(std::string nuevocolor);
 void coronar();
 void mostrar();
 };
