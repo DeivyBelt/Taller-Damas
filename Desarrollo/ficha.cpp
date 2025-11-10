@@ -12,24 +12,23 @@ ficha::ficha(int f, int c, int j, char s, std::string cor){
 }
 
 int ficha::getfila() const {return fila;}
-int ficha::getcolumna() const; {return columna;}
-bool ficha::getcoronoDama() const; {return coronoDama;}
-int ficha::getjugador() const; {return jugador;}
-string ficha::getcolor() const; {return color;}
-char ficha::getsimbolo() const; {return simbolo;}
+int ficha::getcolumna() const {return columna;}
+bool ficha::getcoronoDama() const {return coronoDama;}
+int ficha::getjugador() const {return jugador;}
+string ficha::getcolor() const {return color;}
+char ficha::getsimbolo() const {return simbolo;}
 
 void ficha::setposicion(int nuevafila, int nuevacolumna){
   fila=nuevafila;
   columna=nuevacolumna;
 }
-void coronar(){
+void ficha::coronar(){
   coronoDama=true;
 }
-
-void setcolor(std::string nuevocolor){
-  color=nuevocolor;
+void ficha::setcolor(std::string nuevocolor){
+  color=nuevocolor;  //color diferente para ficha
 }
 
-void mostrar(){
-  cout<<color<<simbolo<<"\033[0m";
+void ficha::mostrar(){
+  cout << color << simbolo << "\033[0m";
 }
