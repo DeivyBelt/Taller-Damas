@@ -29,6 +29,9 @@ public:
     bool tieneMovimientos(int jugador) const;
     bool existeCapturaObligatoria(int jugador) const;
 
+    bool intentarCaptura(int filaOrigen, int colOrigen, int filaDestino, int colDestino, int jugador);
+    bool caminoDespejadoDama(int filaOrigen, int colOrigen, int filaDestino, int colDestino) const;
+
     Ficha* obtenerFicha(int fila, int col) const;
 };
 
