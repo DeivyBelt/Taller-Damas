@@ -7,7 +7,7 @@
 #include "FichaSimple.hpp"
 #include "FichaDama.hpp"
 
-class tablero{
+class Tablero{
 private:
     Ficha* casillas[10][10]; 
     std::string colorClaro;
@@ -15,13 +15,21 @@ private:
 
 public:
     Tablero(std::string tipoColor = "clasico");
+    ~Tablero();
 
     void inicializar();
     void mostrar();
     bool moverFicha(int filaOrigen, int colOrigen, int filaDestino, int colDestino);
     void limpiar();
 
-    Tablero();
+    bool posicionValida(int fila, int col) const;
+    bool casillaVacia(int fila, int col) const;
+    int propietarioDe(int fila, int col) const;
+    int contarPiezas(int jugador) const;
+    bool tieneMovimientos(int jugador) const;
+    bool existeCapturaObligatoria(int jugador) const;
+
+    Ficha* obtenerFicha(int fila, int col) const;
 };
 
 #endif
