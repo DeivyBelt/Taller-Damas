@@ -10,8 +10,21 @@ bool FichaSimple::mover(int nuevaFila, int nuevaColumna) {
     int difColumna = nuevaColumna - columna;
     if (jugador == 1) {
         if (difFila == 1 && std::abs(difColumna) == 1) {
-            fila = nuevaFila;
-            columna = nuevaColumna;
-            return true;
+        fila = nuevaFila;
+        columna = nuevaColumna;
+        return true;
         }
     }
+  else if (jugador == 2) {
+        if (difFila == -1 && std::abs(difColumna) == 1) {
+        fila = nuevaFila;
+        columna = nuevaColumna;
+        return true;
+    }
+}
+return false;
+}
+
+bool FichaSimple::hayCaptura() {
+return false;
+}
