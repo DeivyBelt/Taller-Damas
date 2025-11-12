@@ -44,22 +44,30 @@ void Tablero::inicializar() {
 }
 
 void Tablero::mostrar() {
+    std::cout << "\n    ";
+        for (int j = 0; j < 10; j++) {
+        std::cout << " " << j << " ";
+    }std::cout << "\n";
+    
+    for (int i = 0; i < 10; i++) {
+        std::cout << " " << i << "  ";
+        
+        for (int j = 0; j < 10; j++)
+            if ((i + j) % 2 == 0){
+                std::cout << colorClaro << "   ";}
+            else
+                {std::cout << colorOscuro << "   ";}
+        
+            if (casillas[i][j] != nullptr) {
+                std::cout << "\033[0m";
+                casillas[i][j]->mostrar();
+            } else {
+                std::cout << "\033[0m";
+            }
+        }
+        std::cout << "\033[0m\n";
+    }
     std::cout << "\n";
-    for (int i = 0; i < 8; i++) {
-    for (int j = 0; j < 8; j++) {
-    if ((i + j) % 2 == 0){
-    std::cout << colorClaro << "   ";}
-    else
-    {std::cout << colorOscuro << "   ";}
-    if (casillas[i][j] != nullptr) {
-    std::cout << "\033[0m";
-    casillas[i][j]->mostrar();
-    } else {
-    std::cout << "\033[0m";
-    }
-}
-    std::cout << "\033[0m\n";
-    }
 }
 
 bool Tablero::moverFicha(int filaOrigen, int colOrigen, int filaDestino, int colDestino) {
@@ -75,12 +83,12 @@ bool Tablero::moverFicha(int filaOrigen, int colOrigen, int filaDestino, int col
 }
 
 void Tablero::limpiar() {
-    for (int i = 0; i < 8; i++) {
-    for (int j = 0; j < 8; j++) {
-    delete casillas[i][j];
-    casillas[i][j] = nullptr;
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            delete casillas[i][j];
+            casillas[i][j] = nullptr;
+        }
     }
- }
 }
 
 Tablero::~Tablero() {
