@@ -14,7 +14,7 @@ protected:
   
 public:
   Ficha(int f=0, int c=0, int j=0, char s= 'o', std::string cor="\033[37m");
-
+  virtual ~Ficha() = default;
 virtual bool mover (int nuevaFila, int nuevaColumna)=0;
 virtual bool hayCaptura ()=0;
 
