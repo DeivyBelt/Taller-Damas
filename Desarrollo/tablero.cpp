@@ -71,3 +71,16 @@ bool Tablero::moverFicha(int filaOrigen, int colOrigen, int filaDestino, int col
     }
     return false;
 }
+
+void Tablero::limpiar() {
+    for (int i = 0; i < 8; i++) {
+    for (int j = 0; j < 8; j++) {
+    delete casillas[i][j];
+    casillas[i][j] = nullptr;
+    }
+ }
+}
+
+Tablero::~Tablero() {
+    limpiar();
+}
