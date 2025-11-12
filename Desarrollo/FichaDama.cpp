@@ -16,4 +16,8 @@ bool FichaDama::mover(int nuevaFila, int nuevaColumna) {
     return false;
 }
 
+bool FichaDama::puedeCapturar() {
+    return false; 
+}
+
 
