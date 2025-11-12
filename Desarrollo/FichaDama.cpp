@@ -2,8 +2,8 @@
 #include <cmath>
 #include <iostream>
 
-FichaDama::FichaDama(int f, int c, int j, char s, std::string col)
-    : Ficha(f, c, j, s, col) { esDama = true; }
+FichaDama::FichaDama(int f, int c, int j, char s, std::string cor)
+    : Ficha(f, c, j, s, cor) { esDama = true; }
 
 bool FichaDama::mover(int nuevaFila, int nuevaColumna) {
     int difFila = std::abs(nuevaFila - fila);
@@ -16,8 +16,9 @@ bool FichaDama::mover(int nuevaFila, int nuevaColumna) {
     return false;
 }
 
-bool FichaDama::puedeCapturar() {
+bool FichaDama::hayCaptura() {
     return false; 
 }
+
 
 
