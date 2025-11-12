@@ -5,15 +5,15 @@
 
 class Ficha {
 protected:
-int fila; 
-int columna; 
-bool coronoDama; 
-int jugador; 
-std::string color; 
-char simbolo;
-
+  int fila; 
+  int columna; 
+  bool coronoDama; 
+  int jugador; 
+  std::string color; 
+  char simbolo;
+  
 public:
-Ficha(int f=0, int c=0, int j=0, char s= 'o', std::string cor="\033[37m");
+  Ficha(int f=0, int c=0, int j=0, char s= 'o', std::string cor="\033[37m");
 
 virtual bool mover (int nuevaFila, int nuevaColumna)=0;
 virtual bool hayCaptura ()=0;
