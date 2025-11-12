@@ -41,3 +41,33 @@ void Tablero::inicializar() {
 }
 }
 
+void Tablero::mostrar() {
+    std::cout << "\n";
+    for (int i = 0; i < 8; i++) {
+    for (int j = 0; j < 8; j++) {
+    if ((i + j) % 2 == 0){
+    std::cout << colorClaro << "   ";}
+    else
+    {std::cout << colorOscuro << "   ";}
+    if (casillas[i][j] != nullptr) {
+    std::cout << "\033[0m";
+    casillas[i][j]->mostrar();
+    } else {
+    std::cout << "\033[0m";
+    }
+}
+    std::cout << "\033[0m\n";
+    }
+}
+
+bool Tablero::moverFicha(int filaOrigen, int colOrigen, int filaDestino, int colDestino) {
+    if (casillas[filaOrigen][colOrigen] == nullptr)
+        return false;
+    Ficha* ficha = casillas[filaOrigen][colOrigen];
+    if (ficha->mover(filaDestino, colDestino)) {
+        casillas[filaDestino][colDestino] = ficha;
+        casillas[filaOrigen][colOrigen] = nullptr;
+        return true;
+    }
+    return false;
+}
