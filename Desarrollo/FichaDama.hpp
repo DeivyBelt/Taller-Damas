@@ -8,7 +8,9 @@ public:
 
 bool mover(int nuevafila, int nuevacolumna) override;
 bool haycaptura() override;
+bool puedeCapturarHacia(int filaDestino, int colDestino, int& filaCap, int& colCap);
 };
 #endif
+
 
 
