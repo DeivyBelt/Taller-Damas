@@ -41,8 +41,13 @@ Se implemento para que el juego tenga una experiencia visual personalizada y    
   
 + Paso 3: Destructor Automático: El destructor `Tablero::~Tablero()` llama `limpiar();`, asegurando liberación al destruir el objeto.
 
+EXTRA
++ COMPILACION Y EJECUCION EN UNA SOLA LINEA
 
-   
+-> Windows: g++ -std=c++11 -fexec-charset=UTF-8 -o damas.exe main.cpp Ficha.cpp FichaSimple.cpp FichaDama.cpp Tablero.cpp Juego.cpp ; .\damas.exe
+
+-> Linux/macOS: g++ -std=c++11 -o damas main.cpp Ficha.cpp FichaSimple.cpp FichaDama.cpp Tablero.cpp Juego.cpp && ./damas
+
        
 
    
