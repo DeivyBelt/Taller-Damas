@@ -3,7 +3,7 @@
 Se implemento para que el juego tenga una experiencia visual personalizada y       bonita, permitiendo que el usuario elija entre 5 colores para el tema de su        tablero. Esta el tema clasico, tema rosa, tema azul, tema verde y tema morado.
 
    ¿Por qué se consideró necesario?
-Por que los juego deben ser visualmente atractivos para su total disfrute.
++ Por que los juego deben ser visualmente atractivos para su total disfrute.
 
    ¿Cómo se llevó a cabo su implementación
 + Paso 1: Modificacion del Constructor de Tablero: Se agrego un parámetro     `std::string tipoColor` al constructor de `Tablero` (en `Tablero.hpp` y `Tablero.cpp`). Este parámetro se almacena como atributo privado `std::string colorClaro` y `std::string colorOscuro`, inicializados con códigos ANSI vacíos por defecto.
