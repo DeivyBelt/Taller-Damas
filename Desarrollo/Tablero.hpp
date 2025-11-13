@@ -12,6 +12,8 @@ private:
     Ficha* casillas[10][10]; 
     std::string colorClaro;
     std::string colorOscuro;
+    std::string nombreJugador1;
+    std::string nombreJugador2;
 
 public:
     Tablero(std::string tipoColor = "clasico");
@@ -19,20 +21,25 @@ public:
 
     void inicializar();
     void mostrar();
+
     bool moverFicha(int filaOrigen, int colOrigen, int filaDestino, int colDestino);
+   
     void limpiar();
 
     bool posicionValida(int fila, int col) const;
     bool casillaVacia(int fila, int col) const;
+
     int propietarioDe(int fila, int col) const;
     int contarPiezas(int jugador) const;
+
     bool tieneMovimientos(int jugador) const;
     bool existeCapturaObligatoria(int jugador) const;
-
+    bool moverFicha(int filaOrigen, int colOrigen, int filaDestino, int colDestino);
     bool intentarCaptura(int filaOrigen, int colOrigen, int filaDestino, int colDestino, int jugador);
     bool caminoDespejadoDama(int filaOrigen, int colOrigen, int filaDestino, int colDestino) const;
 
     Ficha* obtenerFicha(int fila, int col) const;
-};
 
+    void setNombres(std::string n1, std::string n2);
+};
 #endif
