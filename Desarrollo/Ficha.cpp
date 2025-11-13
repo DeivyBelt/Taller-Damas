@@ -36,11 +36,12 @@ void Ficha::setPosicion(int nuevaFila, int nuevaColumna){
 }
 void Ficha::coronar(){
   coronoDama=true;
+  simbolo = 'D';
 }
 void Ficha::setColor(string nuevoColor){
-  color=nuevoColor;  //color diferente para ficha
+  color=nuevoColor;  
 }
 
 void Ficha::mostrar(){
-  cout << color << simbolo << "\033[0m";
+  cout << color << simbolo;
 }
